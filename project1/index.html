@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpongeBob's Best Day Ever Story</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <h1>🍍🧽🟨 The Story of a Sponge who lives in a pineapple under the sea 🧽🟨🍍</h1>
+  </header>
+
+  <main id="story">
+    <section class="scene active">
+      <div class="spongebob-bed-container">
+        <img src="assets/images/spongebob-bed.png" alt="SpongeBob in bed" class="spongebob-bed" />
+      </div>
+      <h1>🧽 Hi, I’m SpongeBob SquarePants! 🟨</h1>
+      <p class="story">
+        "I’m a sponge who lives in a pineapple under the sea. Story of my life: today is going to be the best day ever in Bikini Bottom! First, I’ll go to work at the Krusty Krab, then I’ll go jellyfishing with Patrick, and finally, we’ll visit Patrick’s house to end the day."
+      </p>
+      <div class="todo-list">
+        <h2>🧽 SpongeBob's Best Day Ever To-Do List✏️</h2>
+          <h2>☑️ Work at the Krusty Krab ♥️🍔♥️</h2>
+          <h2>☑️ Go jellyfishing with Patrick 🪼</h2>
+          <h2>☑️ Visit Patrick’s house to end the day 🪨</h2>            
+      </div>
+      <div class="wake-up-buttons">
+        <button id="startDayBtn">☀️ RISE AND SHINE! I’m ready!</button>
+        <button id="sleepBtn">⏰🫣🥱😴 Go back to sleep...</button>
+      </div>
+      <div class="spongebob-bed-container">
+        <img src="assets/images/spongebob-home.png" alt="SpongeBob at home" class="spongebob-home" />
+      </div>
+    </section>
+
+    <section class="scene">
+      <h1>⚓️⚓️⚓️First Part of the Best Day Ever: Krusty Krab ♥️🍔⚓️⚓️</h1>
+      <h2>Time to do my favorite job in the whole wide world flipping some Krabby Patties and perfecting Mr. Krab’s secret recipe! 🍔✨</h2>
+      <div class="krusty-crab-container">
+        <img src="assets/images/krusty-crab.png" alt="Krusty Krab" class="krusty-crab" />
+        <img src="assets/images/spongebob-krusty.png" alt="SpongeBob inside Krusty Krab" class="spongebob-krusty" />
+        <img src="assets/images/krabby-patty.png" alt="Krabby Patty" class="krabby-patty patty1" />
+        <img src="assets/images/krabby-patty.png" alt="Krabby Patty" class="krabby-patty patty2" />
+        <img src="assets/images/krabby-patty.png" alt="Krabby Patty" class="krabby-patty patty3" />
+        <img src="assets/images/krabby-patty.png" alt="Krabby Patty" class="krabby-patty patty4" />
+      </div>
+      <button class="nextBtn">Next Part of the best day ever!</button>
+    </section>
+
+    <section class="scene">
+      <h1> 🕗Next Part of the Best Day Ever: Jellyfishing with Patrick 🎶</h1>
+      <h2 class="dialogue">Patrick: "It’s the perfect day to go jellyfishing in Jellyfish Fields! 🪼"</h2>
+      <div class="jellyfish-fields">
+        <img src="assets/images/jellyfish.png" alt="Jellyfish" class="jellyfish jellyfish1" />
+        <img src="assets/images/jellyfish.png" alt="Jellyfish" class="jellyfish jellyfish2" />
+        <img src="assets/images/jellyfish.png" alt="Jellyfish" class="jellyfish jellyfish3" />
+        <img src="assets/images/jellyfish.png" alt="Jellyfish" class="jellyfish jellyfish4" />
+        <img src="assets/images/jellyfish.png" alt="Jellyfish" class="jellyfish jellyfish5" />
+      </div>
+      <button class="nextBtn specialBtn">Last Part of the best day ever</button>
+    </section>
+
+    <section class="scene">
+      <h1>Finishing the Best Day Ever at Patrick’s House 🏡</h1>
+      <div class="patrick-house-container split-screen">
+        <img src="assets/images/patrick-house.png" alt="Patrick's house" class="patrick-house" />
+        <img src="assets/images/patrick-inside.png" alt="Patrick inside" class="patrick-inside" />
+      </div>
+      <div class="patrick-house-bonus">
+        <img src="assets/images/patrick-extra.png" alt="Patrick doing something fun" />
+      </div>
+      <h2>Time to hang out with Patrick and watch the new Mermaid Man and Barnacle Boy movie!</h2>
+    </section>
+
+    <div id="bubbleContainer"></div>
+  </main>
+
+  <audio id="bgMusic" src="assets/sounds/spongebob-theme.mp3" loop></audio>
+  <audio id="bubbleSound" src="assets/sounds/bubble.mp3"></audio>
+  <audio id="spongebobVoice" src="assets/sounds/spongebob-rise-and-shine.mp3"></audio>
+  <audio id="spongebobLaugh" src="assets/sounds/spongebob-laugh.mp3"></audio>
+  <audio id="spongebobSleep" src="assets/sounds/spongebob-sleep.mp3"></audio>
+  <audio id="clickSound" src="assets/sounds/click.mp3"></audio>
+
+  <div id="dimOverlay">
+    <button id="wakeUpBtn">🔆🫡 Wake Up!</button>
+  </div>
+
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Luckiest Guy', cursive, sans-serif;
+  background: linear-gradient(to bottom, #87ceeb, #ffde20);
+  color: #000;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.site-header {
+  background: #ffee38;
+  color: #000;
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* Scenes */
+.scene {
+  display: none;
+  padding: 2rem;
+  animation: fadeIn 1s ease both;
+}
+
+.scene.active {
+  display: block;
+}
+
+.scene h2, .scene p {
+  animation: fadeUp 1s ease both;
+}
+
+.scene.active.dimmed > :not(.wake-up-buttons) {
+  filter: brightness(0.3) blur(1px);
+}
+
+/* Text */
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.story {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  color: #003366;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px 20px;
+  border-radius: 15px;
+  display: inline-block;
+  text-align: center;
+}
+
+.story .emoji {
+  font-size: 2.5rem;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.story .hover-emoji:hover {
+  animation: float 1s infinite alternate ease-in-out;
+}
+
+.dialogue {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #003366;
+  background: #fffa;
+  padding: 8px 12px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Buttons */
+button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.3rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background: #ffa303;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  background: #ffa500;
+  color: #000;
+  animation: buttonPop 0.5s ease;
+}
+
+/* SpongeBob */
+.spongebob {
+  width: 200px;
+  animation: bob 2s infinite ease-in-out;
+  cursor: pointer;
+}
+
+.spongebob:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* SpongeBob on bed */
+.spongebob-bed-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.spongebob-bed {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  animation: floatSponge 3s infinite ease-in-out;
+}
+
+/* Images in Krusty Krab */
+.krusty-crab-container {
+  position: relative;
+  display: inline-block;
+}
+
+.spongebob-krusty {
+  width: 80%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.krabby-patty {
+  background: transparent;
+  mix-blend-mode: multiply;
+  position: absolute;
+  width: 100px;
+  animation: floatPatty infinite ease-in-out;
+  z-index: 200;
+}
+
+.patty1 { left: 15%; top: 70%; animation-duration: 5s; }
+.patty2 { left: 35%; top: 80%; animation-duration: 6s; animation-delay: 1s; }
+.patty3 { left: 55%; top: 75%; animation-duration: 4.5s; animation-delay: 0.5s; }
+.patty4 { left: 75%; top: 85%; animation-duration: 7s; animation-delay: 2s; }
+.patty5 { left: 90%; top: 78%; animation-duration: 5.5s; animation-delay: 1.5s; }
+
+/* Jellyfish Fields */
+.jellyfish-fields {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: url('assets/images/jellyfish-fields.png') center/cover no-repeat;
+  margin: 1rem 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.jellyfish {
+  background: transparent;
+  mix-blend-mode: multiply;
+  position: absolute;
+  width: 80px;
+  animation: floatJellyfish infinite ease-in-out;
+  z-index: 200;
+}
+
+.jellyfish1 { left: 10%; top: 70%; animation-duration: 6s; }
+.jellyfish2 { left: 30%; top: 80%; animation-duration: 7s; animation-delay: 1s; }
+.jellyfish3 { left: 50%; top: 75%; animation-duration: 5s; animation-delay: 0.5s; }
+.jellyfish4 { left: 70%; top: 85%; animation-duration: 8s; animation-delay: 2s; }
+.jellyfish5 { left: 90%; top: 78%; animation-duration: 6.5s; animation-delay: 1.5s; }
+
+/* Patrick's house */
+.patrick-house-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 1rem auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.patrick-house {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.patrick-inside {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  height: auto;
+  z-index: 10;
+}
+
+.patrick-house-container.split-screen {
+  display: flex;
+}
+
+.patrick-house-container.split-screen img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  animation: floatSplit 3s ease-in-out infinite;
+}
+
+.patrick-house-bonus {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.patrick-house-bonus img {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  animation: floatSplit 3s ease-in-out infinite;
+}
+
+/* Dim overlay */
+#dimOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3,3,3,0.85);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease;
+  z-index: 1000;
+}
+
+#dimOverlay button#wakeUpBtn {
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #ffcc00;
+  color: #000;
+  display: none;
+  z-index: 1100;
+}
+
+/* Bubble container */
+#bubbleContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 500;
+}
+
+/* Keyframes */
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes floatSponge {
+  0%,100% { transform: translateY(0) rotate(0deg) scale(1); }
+  25% { transform: translateY(-8px) rotate(-2deg) scale(1.02); }
+  50% { transform: translateY(-12px) rotate(2deg) scale(1.05); }
+  75% { transform: translateY(-8px) rotate(-2deg) scale(1.02); }
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { 0% { opacity:0; transform:translateY(20px); } 100% { opacity:1; transform:translateY(0); } }
+@keyframes buttonPop { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes float { 0% { transform: translateY(0) scale(1); } 50% { transform: translateY(-10px) scale(1.1); } 100% { transform: translateY(0) scale(1); } }
+@keyframes riseRotate { 0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; } 50% { transform: translateY(-150px) rotate(15deg) scale(0.9); opacity: 0.7; } 100% { transform: translateY(-300px) rotate(30deg) scale(0.7); opacity: 0; } }
+@keyframes floatJellyfish { 0% { transform: translate(0,0) rotate(0deg); opacity:1; } 25% { transform: translate(-20px,-40px) rotate(-10deg); opacity:0.9; } 50% { transform: translate(30px,-70px) rotate(15deg); opacity:0.8; } 75% { transform: translate(50px,-30px) rotate(-5deg); opacity:0.9; } 100% { transform: translate(0,0) rotate(0deg); opacity:1; } }
+@keyframes floatPatty { 0% { transform: translate(0,0) rotate(0deg); opacity:1; } 25% { transform: translate(-20px,-40px) rotate(-10deg); opacity:0.9; } 50% { transform: translate(30px,-70px) rotate(15deg); opacity:0.8; } 75% { transform: translate(50px,-30px) rotate(-5deg); opacity:0.9; } 100% { transform: translate(0,0) rotate(0deg); opacity:1; } }
+@keyframes floatSplit { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .spongebob { width: 150px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+  .patrick-house-container.split-screen { flex-direction: column; }
+  .patrick-house-container.split-screen img { width: 100%; height: auto; }
+}

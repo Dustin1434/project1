@@ -1,38 +1,56 @@
 # MEDP33100 - Project 1 Interactive Storytelling
 
 ## Live Demo
-
-- Include a link to the live version of the project hosted on GitHub Pages.
+[View the live project on GitHub Pages]() 
 
 ## Project Overview
+This project is an **interactive storytelling webpage** themed around SpongeBob SquarePants. It is designed to create a playful and engaging user experience using animations, sounds, and interactive elements.
 
-- Briefly describe the purpose of the project.
-- Explain the story you are telling through the webpage and the key interactive elements.
+The story follows SpongeBob through different scenes:
+
+1. **Introduction** – Meet SpongeBob in Bikini Bottom.  
+2. **Krusty Krab** – SpongeBob is excited to make Krabby Patties.  
+3. **Jellyfishing** – SpongeBob and Patrick enjoy jellyfishing at Jellyfish Fields.  
+4. **Patrick’s House** – The day ends with fun at Patrick’s rock home.
+
+Users progress through scenes by clicking buttons, while animations and sounds enhance the storytelling experience.
 
 ## Figma Design
-
-- Provide a link to the Figma design of the webpage.
-
+[View the Figma design](https://www.figma.com/slides/NBpik3bvlvTc6oo3AAEc4x/Project1?node-id=0-1&p=f&t=TsGS7tmS2fZ8h6LV-0)
 ## Features
+- **Animations**  
+  - CSS animations for SpongeBob bobbing, floating jellyfish, Krabby Patties, and scene transitions.  
+  - GSAP-powered smooth scene transitions and bubble effects.
 
-- List the key features of the project, including:
-    - **Animations**: Describe the animations you implemented (e.g., CSS transitions, GSAP effects).
-    - **Sound Effects**: Specify where sound effects are used and how they enhance the user experience.
-    - **User-triggered Events**: Explain how users interact with the page (e.g., clicking, scrolling, hovering) and how the page responds.
-    - **Responsive Design**: Explain how the design adapts to different devices (e.g., desktop, tablet, mobile).
+- **Sound Effects**  
+  - Background music sets the playful tone.  
+  - Character voice lines trigger on key interactions.  
+  - Sound effects for bubbles, clicks, and laughter enhance immersion.
+
+- **User-triggered Events**  
+  - Buttons to progress through scenes.  
+  - Hover animations for SpongeBob and emojis.  
+  - Clickable interactions trigger sounds and animations.
+
+- **Responsive Design**  
+  - Layout adapts to desktop, tablet, and mobile devices.  
+  - Split-screen and stacked views for Patrick’s house.  
+  - Scalable images and text for readability on smaller screens.
 
 ## Technologies Used
-
-- List the technologies and tools used in the project:
-    - **Languages**: HTML, CSS, JavaScript
-    - **Libraries**: (e.g., GSAP for animations)
-    - **Other**: GitHub Pages for hosting, Figma for design
+- **Languages**: HTML, CSS, JavaScript  
+- **Libraries**: GSAP for animations  
+- **Other Tools**: GitHub Pages (hosting), Figma (design), Google Fonts (`Luckiest Guy` font)
 
 ## Credits
-
-- List any third-party assets used in the project (e.g., sound effects, images, fonts) and provide proper attribution.
-- Acknowledge any resources, tutorials, or references you used to help complete the project.
+- **Images**: SpongeBob and scene illustrations from publicly available assets.  
+- **Sound Effects**: SpongeBob theme and voice clips sourced from [appropriate source].  
+- **Fonts**: [Luckiest Guy](https://fonts.google.com/specimen/Luckiest+Guy) from Google Fonts.  
+- Thanks to tutorials and online guides on interactive storytelling and CSS/JS animations.
 
 ## Future Enhancements
-
-- List any features you would’ve liked to add if given more time
+- Add more interactive elements, such as mini-games like jellyfishing.  
+- Include additional sound effects triggered by different actions.  
+- Implement advanced GSAP timeline sequences for cinematic transitions.  
+- Add scene narration with optional text-to-speech for accessibility.  
+- Improve mobile optimization for touch interactions.
