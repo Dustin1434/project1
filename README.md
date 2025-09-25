@@ -1,7 +1,7 @@
 # MEDP33100 - Project 1 Interactive Storytelling
 
 ## Live Demo
-[View the live project on GitHub Pages]() 
+[View the live project on GitHub Pages](https://dustin1434.github.io/project1/) 
 
 ## Project Overview
 This project is an **interactive storytelling webpage** themed around SpongeBob SquarePants. It is designed to create a playful and engaging user experience using animations, sounds, and interactive elements.
