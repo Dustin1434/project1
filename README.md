@@ -44,6 +44,7 @@ Users progress through scenes by clicking buttons, while animations and sounds e
 
 ## Credits
 - **Images**: SpongeBob and scene illustrations from publicly available assets.  
+- **Emoji**: https://getemoji.com/
 - **Sound Effects**: SpongeBob theme and voice clips sourced from https://poppop.ai/sound-effects/spongebob-sound.  
 - **Fonts**: [Luckiest Guy](https://fonts.google.com/specimen/Luckiest+Guy) from Google Fonts.  
 - Thanks to tutorials and online guides on interactive storytelling and CSS/JS animations.

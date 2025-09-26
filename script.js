@@ -11,16 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtns = document.querySelectorAll('.nextBtn');
   const scenes = document.querySelectorAll('.scene');
   const bubbleContainer = document.getElementById('bubbleContainer');
+  const homeBtn = document.getElementById('homeBtn');
+  const backBtns = document.querySelectorAll('.backBtn');
+
   let currentScene = 0;
 
   function showScene(index) {
     scenes.forEach((s, i) => s.classList.toggle('active', i === index));
     scenes.forEach(s => s.classList.remove('dimmed'));
+    currentScene = index;
+
     const text = scenes[index].querySelector('h2');
     if (text && window.gsap) {
       gsap.fromTo(text, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 });
     }
     createBubblesContinuous(2500);
+
+    if (currentScene === 0) {
+      backBtn.style.display = "none";   
+    } else {
+      backBtn.style.display = "inline-block";
+    }
   }
 
   function createBubble() {
@@ -44,18 +55,35 @@ document.addEventListener('DOMContentLoaded', () => {
       spongebobVoice.currentTime = 0;
       spongebobVoice.play();
       spongebobVoice.onended = () => {
-        currentScene = 1;
-        showScene(currentScene);
+        showScene(1);
       };
     }
     if (bgMusic) bgMusic.play();
   });
 
+
+  homeBtn.addEventListener("click", () => {
+  showScene(0);
+});
+
+
+  backBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentScene > 0) {
+      showScene(currentScene - 1);
+    } else {
+      showScene(0);
+    }
+  });
+});
+
   nextBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentScene++;
-      if (currentScene >= scenes.length) currentScene = scenes.length - 1;
-      showScene(currentScene);
+    btn.addEventListener("click", () => {
+      if (currentScene + 1 < scenes.length) {
+        showScene(currentScene + 1);
+      } else {
+        showScene(0);
+      }
     });
   });
 
@@ -102,3 +130,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
