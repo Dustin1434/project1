@@ -13,25 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const bubbleContainer = document.getElementById('bubbleContainer');
   const homeBtn = document.getElementById('homeBtn');
   const backBtns = document.querySelectorAll('.backBtn');
+  const clickSound = document.getElementById('clickSound');
 
   let currentScene = 0;
+  let bubbleInterval;
 
   function showScene(index) {
-    scenes.forEach((s, i) => s.classList.toggle('active', i === index));
-    scenes.forEach(s => s.classList.remove('dimmed'));
+    if (index < 0 || index >= scenes.length) return;
+    scenes.forEach((s, i) => {
+      s.classList.toggle('active', i === index);
+      s.classList.remove('dimmed');
+    });
     currentScene = index;
-
-    const text = scenes[index].querySelector('h2');
-    if (text && window.gsap) {
-      gsap.fromTo(text, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 });
+    const heading = scenes[index].querySelector('h2');
+    if (heading && window.gsap) {
+      gsap.fromTo(heading, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 });
     }
-    createBubblesContinuous(2500);
-
-    if (currentScene === 0) {
-      backBtn.style.display = "none";   
-    } else {
-      backBtn.style.display = "inline-block";
-    }
+    startBubbles(3000);
+    const displayStyle = (currentScene === 0) ? "none" : "inline-block";
+    backBtns.forEach(btn => btn.style.display = displayStyle);
   }
 
   function createBubble() {
@@ -39,52 +39,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const bubble = document.createElement('div');
     bubble.className = 'bubble';
     bubble.style.left = `${Math.random() * 90}%`;
-    bubble.style.width = `${Math.random() * 15 + 8}px`;
-    bubble.style.height = bubble.style.width;
+    const size = Math.random() * 15 + 8;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
     bubbleContainer.appendChild(bubble);
     setTimeout(() => bubble.remove(), 3000);
   }
 
-  function createBubblesContinuous(duration = 2000) {
-    const interval = setInterval(createBubble, 150);
-    setTimeout(() => clearInterval(interval), duration);
+  function startBubbles(duration = 2000) {
+    if (bubbleInterval) clearInterval(bubbleInterval);
+    bubbleInterval = setInterval(createBubble, 150);
+    setTimeout(() => clearInterval(bubbleInterval), duration);
   }
 
   startDayBtn.addEventListener('click', () => {
     if (spongebobVoice) {
       spongebobVoice.currentTime = 0;
       spongebobVoice.play();
-      spongebobVoice.onended = () => {
-        showScene(1);
-      };
+      spongebobVoice.onended = () => showScene(1);
     }
     if (bgMusic) bgMusic.play();
   });
 
-
-  homeBtn.addEventListener("click", () => {
-  showScene(0);
-});
-
+  homeBtn.addEventListener("click", () => showScene(0));
 
   backBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    if (currentScene > 0) {
-      showScene(currentScene - 1);
-    } else {
-      showScene(0);
-    }
+    btn.addEventListener("click", () => showScene(Math.max(currentScene - 1, 0)));
   });
-});
 
   nextBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (currentScene + 1 < scenes.length) {
-        showScene(currentScene + 1);
-      } else {
-        showScene(0);
-      }
-    });
+    btn.addEventListener("click", () => showScene((currentScene + 1) % scenes.length));
   });
 
   sleepBtn.addEventListener('click', () => {
@@ -116,18 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
       bubbleSound.currentTime = 0;
       bubbleSound.play();
     }
-  });
-
-  showScene(currentScene);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const clickSound = document.getElementById('clickSound');
-  document.addEventListener('click', () => {
     if (clickSound) {
       clickSound.currentTime = 0;
       clickSound.play();
     }
   });
-});
 
+  showScene(currentScene);
+});

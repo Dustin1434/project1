@@ -293,7 +293,6 @@ button:hover {
 @keyframes floatPatty { 0% { transform: translate(0,0) rotate(0deg); opacity:1; } 25% { transform: translate(-20px,-40px) rotate(-10deg); opacity:0.9; } 50% { transform: translate(30px,-70px) rotate(15deg); opacity:0.8; } 75% { transform: translate(50px,-30px) rotate(-5deg); opacity:0.9; } 100% { transform: translate(0,0) rotate(0deg); opacity:1; } }
 @keyframes floatSplit { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-/* Responsive */
 @media (max-width: 768px) {
   .spongebob { width: 150px; }
   h1 { font-size: 2rem; }
@@ -302,3 +301,15 @@ button:hover {
   .patrick-house-container.split-screen img { width: 100%; height: auto; }
 }
 
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255, 255, 255, 0.805);
+  border-radius: 50%;
+  opacity: 1;
+  animation: riseRotate 8s linear infinite;
+}
+
+.bubble.small { width: 20px; height: 20px; }
+.bubble.medium { width: 40px; height: 40px; }
+.bubble.large { width: 60px; height: 60px; }
